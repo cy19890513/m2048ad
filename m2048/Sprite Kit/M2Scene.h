@@ -18,4 +18,6 @@
 
 - (void)loadBoardWithGrid:(M2Grid *)grid;
 
+-(void) watchADClicked;
+
 @end

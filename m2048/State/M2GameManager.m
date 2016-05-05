@@ -41,6 +41,8 @@ BOOL iterate(NSInteger value, BOOL countUp, NSInteger upper, NSInteger lower) {
   
   /** The points earned by the user in the current round. */
   NSInteger _pendingScore;
+    
+ NSInteger _watchADScore ;
   
   /** The grid on which everything happens. */
   M2Grid *_grid;
@@ -54,6 +56,9 @@ BOOL iterate(NSInteger value, BOOL countUp, NSInteger upper, NSInteger lower) {
 
 - (void)startNewSessionWithScene:(M2Scene *)scene
 {
+    
+  _watchADScore = 500;
+    
   if (_grid) [_grid removeAllTilesAnimated:NO];
   if (!_grid || _grid.dimension != GSTATE.dimension) {
     _grid = [[M2Grid alloc] initWithDimension:GSTATE.dimension];
@@ -276,6 +281,12 @@ BOOL iterate(NSInteger value, BOOL countUp, NSInteger upper, NSInteger lower) {
   
   // Nothing is found.
   return NO;
+}
+
+-(void) watchADClicked
+{
+    _score += _watchADScore;
+    [_grid.scene.controller updateScore:_score];
 }
 
 @end

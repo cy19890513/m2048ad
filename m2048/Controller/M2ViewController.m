@@ -264,7 +264,8 @@
 }
 - (IBAction)watchADButton:(id)sender
 {
-    ((SKView *)self.view).paused = YES;
+    //((SKView *)self.view).paused = YES;
+    [_scene watchADClicked];
     [self playAD];
 }
 

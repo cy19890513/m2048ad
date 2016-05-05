@@ -35,4 +35,6 @@ typedef NS_ENUM(NSInteger, M2Direction) {
  */
 - (void)moveToDirection:(M2Direction)direction;
 
+
+-(void) watchADClicked;
 @end

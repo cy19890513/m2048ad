@@ -109,4 +109,10 @@
 }
 
 
+-(void) watchADClicked
+{
+    [_manager watchADClicked];
+    
+}
+
 @end
